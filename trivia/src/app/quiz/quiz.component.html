@@ -1,0 +1,29 @@
+<form #form="ngForm" (ngSubmit)="submitQuiz(form)">
+        <label for="name">Name:</label>
+        <input name="name" id="name" type="text" placeholder="Your Name" ngModel />
+        <ul *ngFor="let question of questions; index as i">
+          <li>{{ question.question_name }}</li>
+          <li>
+            <input name="{{ i }}" value="{{ question.choice_1 }}" type="radio" />{{
+              question.choice_1
+            }}
+          </li>
+          <li>
+            <input name="{{ i }}" value="{{ question.choice_2 }}" type="radio" />{{
+              question.choice_2
+            }}
+          </li>
+          <li>
+            <input name="{{ i }}" value="{{ question.choice_3 }}" type="radio" />{{
+              question.choice_3
+            }}
+          </li>
+          <li>
+            <input name="{{ i }}" value="{{ question.choice_4 }}" type="radio" />{{
+              question.choice_4
+            }}
+          </li>
+        </ul>
+        <button>Submit</button>
+      </form>
+      
